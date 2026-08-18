@@ -1,0 +1,17 @@
+# Локальные инструменты и состояние
+.omo/
+.codegraph/
+.playwright-mcp/
+.wrangler/
+node_modules/
+
+# Окружение и секреты
+.env
+.env.*
+.dev.vars
+*.local
+
+# Системное
+.DS_Store
+Thumbs.db
+*.log
