@@ -694,6 +694,51 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   color: var(--tinta-2);
 }
 
+/* Canción con reproducción de YouTube al hacer clic */
+.tl-cancion {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  margin: 0 0.1em;
+  padding: 0.05em 0.3em;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px dotted var(--oro-oscuro);
+  color: var(--oro-oscuro);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s, border-bottom-color 0.2s, color 0.2s;
+}
+.tl-cancion:hover,
+.tl-cancion:focus-visible {
+  background: rgba(201, 162, 39, 0.14);
+  border-bottom-style: solid;
+  color: var(--oro);
+  outline: none;
+}
+.tl-cancion-play {
+  font-size: 0.7em;
+  line-height: 1;
+}
+.tl-cancion-player {
+  position: relative;
+  margin-top: 0.7rem;
+  padding-top: 56.25%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #000;
+}
+.tl-cancion-player iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .chip {
   display: inline-flex;
   align-items: center;

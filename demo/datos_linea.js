@@ -79,7 +79,12 @@ window.DATOS_LINEA = {
     {
       "anio": 1928,
       "titulo": "Muerte de Adolfo Rojas Silva",
-      "descripcion": "Adolfo Rojas Silva fue muerto en 1928: fue la primera víctima de la contienda chaqueña, antes de que se iniciara la Guerra del Chaco. Su muerte inspiró la canción Rojas Silva rekávo de Emiliano Rivarola Fernández, que hizo estallar el patriotismo de toda la población civil paraguaya y provocó el enrolamiento en masa de la ciudadanía.",
+      "descripcion": "Adolfo Rojas Silva fue muerto en 1928: fue la primera víctima de la contienda chaqueña, antes de que se iniciara la Guerra del Chaco. Su muerte inspiró la canción [[Rojas Silva rekávo|lEOkflvHDk8]] de Emiliano Rivarola Fernández, que hizo estallar el patriotismo de toda la población civil paraguaya y provocó el enrolamiento en masa de la ciudadanía.",
+      "cancion": {
+        "titulo": "Rojas Silva rekávo",
+        "autor": "Emiliano Rivarola Fernández",
+        "youtube": "lEOkflvHDk8"
+      },
       "categoria": "guerra",
       "id": "muerte-rojas-silva"
     },

@@ -104,6 +104,16 @@
     });
   }
 
+  /* Convierte [[Título|VIDEO_ID]] en un botón que reproduce el video al hacer clic.
+     El texto ya pasó por esc(), por lo que inyectar el botón es seguro. */
+  function descripcionConCancion(ev) {
+    var txt = esc(ev.descripcion || '');
+    return txt.replace(/\[\[(.+?)\|([A-Za-z0-9_-]{6,})\]\]/g, function (m, nombre, yt) {
+      return '<button type="button" class="tl-cancion" data-yt="' + yt + '" aria-label="Reproducir ' + nombre + '">' +
+        '<span class="tl-cancion-play" aria-hidden="true">&#9654;</span>' + nombre + '</button>';
+    });
+  }
+
   function parseAnio(a) {
     if (typeof a === 'number') return a;
     var m = String(a).match(/\d{4}/);
@@ -196,7 +206,7 @@
             (CATS[ev.categoria] ? '<span class="chip chip-' + esc(ev.categoria) + '">' + esc(CATS[ev.categoria]) + '</span>' : '') +
           '</div>' +
           '<h3 class="tl-titulo">' + esc(ev.titulo) + '</h3>' +
-          '<p class="tl-desc">' + esc(ev.descripcion) + '</p>' +
+          '<p class="tl-desc">' + descripcionConCancion(ev) + '</p>' +
         '</div>' +
       '</article>';
     });
@@ -541,6 +551,31 @@
     initReveal();
   }
 
+  /* ---------- Escuchar canciones (YouTube embebido) ---------- */
+
+  function initCanciones() {
+    var cont = document.getElementById('timeline');
+    if (!cont || cont.dataset.cancionesInit) return;
+    cont.dataset.cancionesInit = '1';
+    cont.addEventListener('click', function (e) {
+      var t = e.target;
+      var btn = (t && t.closest) ? t.closest('.tl-cancion') : null;
+      if (!btn) return;
+      e.preventDefault();
+      var yt = btn.getAttribute('data-yt');
+      if (!yt) return;
+      var wrap = document.createElement('div');
+      wrap.className = 'tl-cancion-player';
+      wrap.setAttribute('role', 'region');
+      wrap.setAttribute('aria-label', 'Reproductor de YouTube');
+      wrap.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(yt) +
+        '?autoplay=1&amp;rel=0" title="YouTube video player" frameborder="0" ' +
+        'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
+        'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+      btn.replaceWith(wrap);
+    });
+  }
+
   /* ---------- Arranque ---------- */
 
   function init() {
@@ -556,6 +591,7 @@
     renderProyecto();
     initNav();
     initLangSwitch();
+    initCanciones();
     initReveal();
   }
 

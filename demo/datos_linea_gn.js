@@ -79,7 +79,12 @@ window.DATOS_LINEA_GN = {
     {
       "anio": 1928,
       "titulo": "Adolfo Rojas Silva ñemano",
-      "descripcion": "Adolfo Rojas Silva omano 1928-pe: ha'e contienda chaqueña ñepyrũrã víctima, Ñorairõ Chaco oñepyrũ mboyve. Imano omboheko purahéi Rojas Silva rekávo Emiliano Rivarola Fernández pegua, omosakãva paraguayo civil opavave tetãrayhu ha omoinge va'ekue ciudadanía opavavete.",
+      "descripcion": "Adolfo Rojas Silva omano 1928-pe: ha'e contienda chaqueña ñepyrũrã víctima, Ñorairõ Chaco oñepyrũ mboyve. Imano omboheko purahéi [[Rojas Silva rekávo|lEOkflvHDk8]] Emiliano Rivarola Fernández pegua, omosakãva paraguayo civil opavave tetãrayhu ha omoinge va'ekue ciudadanía opavavete.",
+      "cancion": {
+        "titulo": "Rojas Silva rekávo",
+        "autor": "Emiliano Rivarola Fernández",
+        "youtube": "lEOkflvHDk8"
+      },
       "categoria": "guerra",
       "id": "muerte-rojas-silva"
     },
